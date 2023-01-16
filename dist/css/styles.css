@@ -360,4 +360,89 @@ a {
   color: inherit;
 }
 
+:root {
+  --seconds-rotate: 0;
+}
+
+/* Variables SASS */
+.analog {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.analog__clock {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: black;
+  border-radius: 100%;
+  border: 10px solid grey;
+  box-sizing: content-box;
+}
+.analog__clock::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 500px;
+  left: 50%;
+  background-color: white;
+}
+.analog__clock::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 5px;
+  top: 50%;
+  background-color: white;
+}
+.analog__face {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  border-radius: 100%;
+}
+.analog__face::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.mark {
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  height: 500px;
+  background-color: white;
+}
+.mark-one {
+  transform: rotate(30deg);
+}
+.mark-two {
+  transform: rotate(60deg);
+}
+.mark-three {
+  transform: rotate(120deg);
+}
+.mark-four {
+  transform: rotate(150deg);
+}
+.mark-seconds {
+  position: absolute;
+  width: 5px;
+  height: 150px;
+  left: calc(50% - 2px);
+  top: calc(50% - 150px);
+  background-color: red;
+  transform: rotate(var(--seconds-rotate));
+  transform-origin: bottom;
+}
+
 /* ESTILOS DEL FOOTER */

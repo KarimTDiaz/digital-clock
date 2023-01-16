@@ -1,0 +1,77 @@
+@use '../mixins/pseudo.scss' as*;
+
+.analog{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__clock{
+        position: relative;
+        width: 500px;
+        height: 500px;
+        background-color: black;
+        border-radius: 100%;
+        border: 10px solid grey;
+        box-sizing: content-box;
+        &::after{
+            @include pseudo(5px, 500px){
+                left: 50%;
+                background-color: white;
+            }
+        }
+        &::before{
+            @include pseudo (500px, 5px){
+                top: 50%;
+                background-color: white;
+            }
+        }
+    }
+    &__face{
+        position: absolute;
+       
+        width: 400px;
+        height: 400px;
+        background-color: black;
+        border-radius: 100%;
+        &::after{
+            @include pseudo(20px,20px){
+                background-color: white;
+                top: calc(50% - 10px);
+                left:  calc(50% - 10px) ;
+                border-radius: 100%;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.mark{
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    height: 500px;
+    background-color: white;
+    &-one{
+    transform: rotate(30deg);
+    }
+    &-two{
+        transform: rotate(60deg);
+    }
+    &-three{
+        transform: rotate(120deg);
+    }
+    &-four{
+        transform: rotate(150deg);
+    }
+
+    &-seconds{
+        position: absolute;
+        width:5px;
+        height: 150px;
+        left: calc(50% - 2px);
+        top: calc(50% - 150px);
+        background-color: red;
+        transform: rotate(var(--seconds-rotate));
+        transform-origin: bottom;
+    }
+}
