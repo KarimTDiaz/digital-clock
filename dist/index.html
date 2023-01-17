@@ -12,15 +12,13 @@
   </head>
 
   <body>
-    <header class="header">
-      
-    </header>
     <main class="main">
       <div class="digital">
       <div class="digital-clock">
         <span id="digital-hour" class="digital-clock__hour"></span>
-        <span class="two-points"></span>
+        <span class="two-points">:</span>
         <span id="digital-minutes" class="digital-clock__minutes"></span>
+        <span class="two-points">:</span>
         <span id="seconds" class="digital-clock__seconds"></span>
       </div>
       <div class="digital-date">
@@ -31,24 +29,19 @@
       </div>
     </div>
     <div class="analog">
-
       <div class="analog__clock">
         <div class="mark mark-one"></div>
         <div class="mark mark-two"></div>
         <div class="mark mark-three"></div>
         <div class="mark mark-four"></div>
       </div>
-    
     <div class="analog__face">
       <div class="mark-hours"></div>
-      <div class="mark-minutes"></div>
+      <div id="mark-minutes" class="mark-minutes"></div>
       <div id="mark-seconds" class="mark-seconds"></div>
-
     </div>
   </div>
-
     </main>
-    <footer class="footer"></footer>
     <script src="js/scripts.js"></script>
   </body>
 </html>

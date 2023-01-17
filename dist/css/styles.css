@@ -362,9 +362,26 @@ a {
 
 :root {
   --seconds-rotate: 0;
+  --minutes-rotate: 0;
+  --digital-color:#67ff6b;
+  --digital-bg-color: #000117;
 }
 
 /* Variables SASS */
+body {
+  background-color: lightslategrey;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10rem 5rem;
+}
+
 .analog {
   position: relative;
   display: flex;
@@ -379,6 +396,7 @@ a {
   border-radius: 100%;
   border: 10px solid grey;
   box-sizing: content-box;
+  box-shadow: 10px 5px 50px 10px black;
 }
 .analog__clock::after {
   content: "";
@@ -436,13 +454,57 @@ a {
 }
 .mark-seconds {
   position: absolute;
-  width: 5px;
-  height: 150px;
+  width: 4px;
+  height: 200px;
   left: calc(50% - 2px);
-  top: calc(50% - 150px);
+  top: calc(50% - 200px);
   background-color: red;
   transform: rotate(var(--seconds-rotate));
   transform-origin: bottom;
+}
+.mark-minutes {
+  position: absolute;
+  width: 5px;
+  height: 180px;
+  left: calc(50% - 2.5px);
+  top: calc(50% - 180px);
+  background-color: white;
+  transform: rotate(var(--minutes-rotate));
+  transform-origin: bottom;
+}
+.mark-hours {
+  position: absolute;
+  width: 8px;
+  height: 120px;
+  left: calc(50% - 4px);
+  top: calc(50% - 120px);
+  background-color: white;
+  transform: rotate(var(--hours-rotate));
+  transform-origin: bottom;
+}
+
+@font-face {
+  font-family: "digital";
+  src: url(../assets/fonts/DS-DIGIT.TTF);
+}
+.digital {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 680px;
+  font-family: "digital";
+  color: var(--digital-color);
+  background-color: var(--digital-bg-color);
+  border-radius: 1rem;
+  border: 10px solid grey;
+  box-shadow: 10px 5px 50px 10px black;
+}
+.digital-clock {
+  display: flex;
+  font-size: 12rem;
+}
+.digital-date {
+  font-size: 2rem;
 }
 
 /* ESTILOS DEL FOOTER */

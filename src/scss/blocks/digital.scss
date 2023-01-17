@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'digital';
+    src: url(../assets/fonts/DS-DIGIT.TTF);
+}
+.digital{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 680px;
+    font-family: 'digital';
+    color: var(--digital-color);
+    background-color: var(--digital-bg-color) ;
+    border-radius: 1rem;
+    border: 10px solid grey;
+    box-shadow :10px 5px 50px 10px black;
+    &-clock{
+        display: flex;
+        font-size: 12rem;
+    }
+    &-date{
+        font-size: 2rem;
+
+        
+    }
+}
+
+
+
+

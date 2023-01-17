@@ -13,6 +13,7 @@
         border-radius: 100%;
         border: 10px solid grey;
         box-sizing: content-box;
+        box-shadow :10px 5px 50px 10px black;
         &::after{
             @include pseudo(5px, 500px){
                 left: 50%;
@@ -28,7 +29,6 @@
     }
     &__face{
         position: absolute;
-       
         width: 400px;
         height: 400px;
         background-color: black;
@@ -66,12 +66,34 @@
 
     &-seconds{
         position: absolute;
-        width:5px;
-        height: 150px;
+        width:4px;
+        height: 200px;
         left: calc(50% - 2px);
-        top: calc(50% - 150px);
+        top: calc(50% - 200px);
         background-color: red;
         transform: rotate(var(--seconds-rotate));
+        transform-origin: bottom;
+    }
+
+    &-minutes{
+        position: absolute;
+        width:5px;
+        height: 180px;
+        left: calc(50% - 2.5px);
+        top: calc(50% - 180px);
+        background-color: white;
+        transform: rotate(var(--minutes-rotate));
+        transform-origin: bottom;
+    }
+
+    &-hours{
+        position: absolute;
+        width:8px;
+        height: 120px;
+        left: calc(50% - 4px);
+        top: calc(50% - 120px);
+        background-color: white;
+        transform: rotate(var(--hours-rotate));
         transform-origin: bottom;
     }
 }
